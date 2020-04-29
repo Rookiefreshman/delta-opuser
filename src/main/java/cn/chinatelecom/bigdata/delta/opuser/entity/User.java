@@ -12,12 +12,6 @@ import lombok.EqualsAndHashCode;
 @Data
 @TableName("User")
 public class User extends BaseEntity{
-
-    /**
-     * Userid
-     */
-    private Integer id;
-
     /**
      * 用户名
      */
