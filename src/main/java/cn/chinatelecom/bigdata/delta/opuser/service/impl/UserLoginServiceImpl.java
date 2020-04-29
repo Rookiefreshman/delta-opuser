@@ -31,7 +31,10 @@ public class UserLoginServiceImpl implements UserLoginService {
         // 账号不存在、密码错误
         String password = userLoginBody.getPassword();
         String username = userLoginBody.getUsername();
-        String ReturnPassword = users.get(0).getPassword();
+        String ReturnPassword = null;
+        if(users!=null) {
+             ReturnPassword = users.get(0).getPassword();
+        }
         if (users == null) {
             log.info("账户不存在");
            RestResult.builder().message("PasswordUtils.java账号不存在");
@@ -45,14 +48,6 @@ public class UserLoginServiceImpl implements UserLoginService {
         UserVo userVo = new UserVo();
         userVo.setUsername(users.get(0).getUsername());
         userVo.setPassword(users.get(0).getPassword());
-//        UserVo userVo = modelMapper.map(users,UserVo.class);
-//        userVo.setUsername(users.get(0).getUsername());
-//        userVo.setPassword(users.get(0).getPassword());
         return userVo;
-//        if (!PasswordUtils.matches(PasswordUtils.getSalt(), password, users.get(0).getPassword())) {
-//            log.info("密码错误");
-//            RestResult.builder().message("密码错误");
-//        }
-
     }
 }

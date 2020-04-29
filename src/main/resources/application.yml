@@ -1,5 +1,6 @@
+service:
+  port: 8088
 spring:
-  port: 8082
   datasource:
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
@@ -13,7 +14,7 @@ spring:
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
-  type-aliases-package: cn.chinatelecom.bigdata.delta.opuser.entity
+#  type-aliases-package: cn.chinatelecom.bigdata.delta.opuser.entity
   mapper-locations: classpath:mapper/*.xml
 pagehelper:
   helper-dialect: mysql
@@ -21,11 +22,11 @@ pagehelper:
 #logging:
 #  level:
 #    cn.chinatelecom.bigdata.delta.cmdb: debug
-#qh-swagger:
-#  api-info:
-#    title: OPUSER
-#    description: OPUSER
-#    version: 1.0.0
+qh-swagger:
+  api-info:
+    title: OPUSER
+    description: OPUSER
+    version: 1.0.0
 logging:
   level:
     cn.chinatelecom.bigdata.delta.opuser: debug

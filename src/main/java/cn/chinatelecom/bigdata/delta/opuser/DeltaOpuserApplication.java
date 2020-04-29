@@ -18,7 +18,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 @SpringBootApplication(scanBasePackages = {
 		"cn.chinatelecom.bigdata.delta.opuser",
 		"cn.chinatelecom.bigdata.delta.common"} )
-@MapperScan("cn.chinatelecom.bigdata.delta.opuser.mapper")
+//@MapperScan("cn.chinatelecom.bigdata.delta.opuser.mapper")
 public class DeltaOpuserApplication {
 
 	public static void main(String[] args) {

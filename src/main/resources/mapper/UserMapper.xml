@@ -1,65 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.chinatelecom.bigdata.delta.opuser.mapper.UserMapper">
-    <select id="findByUserName" resultType="cn.chinatelecom.bigdata.delta.opuser.dto.entity.User">
+    <select id="findByUserName" resultType="cn.chinatelecom.bigdata.delta.opuser.entity.User">
         SELECT User.*
         FROM User
         where User.`username`=#{username}
     </select>
 
-<!--    <select id="findHostByComplexCondition" resultType="cn.chinatelecom.bigdata.delta.cmdb.business.HostListQueryBo">-->
-<!--        SELECT host.*-->
-<!--        FROM host-->
-<!--        <if test="compInstanceParentId != null and compInstanceParentId != ''">-->
-<!--            LEFT JOIN comp_instance_host ch-->
-<!--            ON ch.`host_id` = host.`id`-->
-<!--        </if>-->
-<!--        <where>-->
-<!--            host.`is_deleted` = 0-->
-<!--            <if test="clusterId != null and clusterId != ''">-->
-<!--                AND host.`cluster_id` = #{clusterId}-->
-<!--            </if>-->
-<!--            <if test="compInstanceParentId != null and compInstanceParentId != ''">-->
-<!--                AND ch.`parent_id` = #{compInstanceParentId} AND ch.`is_deleted` = 0-->
-<!--            </if>-->
-<!--            <if test="compInstanceId != null and compInstanceId != ''">-->
-<!--                AND ch.`instance_id` = #{compInstanceId}-->
-<!--            </if>-->
-<!--            <if test="keyword != null and keyword != ''">-->
-<!--                AND (host.`host_name` LIKE #{keyword} OR host.`outer_ip` LIKE #{keyword}-->
-<!--                OR host.`inner_ip` LIKE #{keyword} OR host.`description` LIKE #{keyword})-->
-<!--            </if>-->
-<!--            <if test="startIpValue != null and startIpValue != '' and endIpValue != null and endIpValue != ''">-->
-<!--                AND (host.`outer_ip_value` &gt;= #{startIpValue} AND host.`outer_ip_value` &lt;= #{endIpValue})-->
-<!--            </if>-->
-<!--        </where>-->
-<!--        ORDER BY host.`outer_ip_value` ASC-->
-<!--        LIMIT ${(pageNum-1)*pageSize}, #{pageSize}-->
-<!--    </select>-->
-
-<!--    <select id="getTotalHostByComplexCondition" resultType="java.lang.Integer">-->
-<!--        SELECT COUNT(1)-->
-<!--        FROM host-->
-<!--        <if test="compInstanceId != null and compInstanceId != ''">-->
-<!--            LEFT JOIN comp_instance_host ch-->
-<!--            ON ch.`host_id` = host.`id`-->
-<!--        </if>-->
-<!--        <where>-->
-<!--            host.`is_deleted` = 0-->
-<!--            <if test="clusterId != null and clusterId != ''">-->
-<!--                AND host.`cluster_id` = #{clusterId}-->
-<!--            </if>-->
-<!--            <if test="compInstanceId != null and compInstanceId != ''">-->
-<!--                AND ch.`instance_id` = #{compInstanceId} AND ch.`is_deleted` = 0-->
-<!--            </if>-->
-<!--            <if test="keyword != null and keyword != ''">-->
-<!--                AND (host.`host_name` LIKE #{keyword} OR host.`outer_ip` LIKE #{keyword}-->
-<!--                OR host.`inner_ip` LIKE #{keyword} OR host.`description` LIKE #{keyword})-->
-<!--            </if>-->
-<!--            <if test="startIpValue != null and startIpValue != '' and endIpValue != null and endIpValue != ''">-->
-<!--                AND (host.`outer_ip_value` &gt;= #{startIpValue} AND host.`outer_ip_value` &lt;= #{endIpValue})-->
-<!--            </if>-->
-<!--        </where>-->
-<!--    </select>-->
 
 </mapper>

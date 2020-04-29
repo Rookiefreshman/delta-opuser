@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2020/1/14
  */
 @Configuration
-@MapperScan(basePackages = {"cn.chinatelecom.bigdata.delta.cmdb.mapper"})
+@MapperScan(basePackages = {"cn.chinatelecom.bigdata.delta.opuser.mapper"})
 public class MybatisPlusConfig {
 
     /**

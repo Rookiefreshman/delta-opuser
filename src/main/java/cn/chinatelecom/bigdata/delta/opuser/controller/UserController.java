@@ -27,6 +27,7 @@ public class UserController {
     @GetMapping("/login")
     public RestResult<UserVo> userlogin(@RequestBody UserLoginBody userLoginBody){
 
-  return RestResult.<UserVo>builder().ok(userLoginService.getUserInfo(userLoginBody));
+        return RestResult.<UserVo>builder().ok(userLoginService.getUserInfo(userLoginBody));
+
     }
 }
